@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <title>Car Price Predictor</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="title">Laptop Price Predictor</div>
+        <form action="/" method="POST">
+            <div class="form">
+                <div class="inputfield">
+                    <label for="year">YEAR : </label>
+                    <select id="year" name="year">
+                        <!-- JavaScript will populate the years here -->
+                    </select>
+                </div>
+                <div class="inputfield">
+                    <label for="km_driven">km_driven (Km)</label>
+                    <input class="input" type="text" name="km_driven" required>
+                </div>
+                <div class="inputfield">
+                    <label for="mileage(km/ltr/kg)">mileage(km/ltr/kg)</label>
+                    <input class="input" type="text" name="mileage(km/ltr/kg)" required>
+                </div>
+                <div class="inputfield">
+                    <label for="engine">Engine</label>
+                    <input class="input" type="text" name="engine" required>
+                </div>
+                <div class="inputfield">
+                    <label for="max_power">Max Power</label>
+                    <input class="input" type="text" name="max_power" required>
+                </div>
+                <div class="inputfield">
+                    <label for="seats">Seats</label>
+                    <input class="input" type="text" name="seats" required>
+                </div>
+                <div class="inputfield">
+                    <label for="name">Brand Name</label>
+                    <div class = "custom_select">
+                        <select name="name" id="name">
+                            <option value="" selected hidden>Select Brand Name</option>
+                            <option value="BMW X4 M Sport X xDrive20d">BMW X4 M Sport X xDrive20d</option>
+                            <option value="Maruti Alto 800 LXI">Maruti Alto 800 LXI</option>
+                            <option value="Maruti Alto LXi">Maruti Alto LXi</option>
+                            <option value="Maruti Swift Dzire VDI">Maruti Swift Dzire VDI</option>
+                            <option value="Maruti Swift VDI">Maruti Swift VDI</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="inputfield">
+                    <label for="fuel">Fuel Type</label>
+                    <div class = "custom_select">
+                        <select name="fuel" id="fuel">
+                            <option value="" selected hidden>Select Fuel Type</option>
+                            <option value="CNG">CNG</option>
+                            <option value="Diesel">Diesel</option>
+                            <option value="LPG">LPG</option>
+                            <option value="Petrol">Petrol</option>
+                        </select> 
+                    </div>
+                </div>
+                <div class="inputfield">
+                    <label for="seller_type">Seller Type</label>           
+                    <div class = "custom_select">
+                        <select name="seller_type" id="seller_type">
+                            <option value="" selected hidden>Select Seller Type</option>
+                            <option value="Dealer">Dealer</option>
+                            <option value="Individual">Individual</option>
+                            <option value="Trustmark Dealer">Trustmark Dealer</option>
+                        </select> 
+                    </div>
+                </div>
+                <div class="inputfield">
+                    <label for="transmission">Transmission</label>   
+                    <div class = "custom_select">
+                        <select name="transmission" id="transmission">
+                            <option value="" selected hidden>Select Transmission</option>
+                            <option value="Automatic">Automatic</option>
+                            <option value="Manual">Manual</option>
+                        </select>  
+                    </div>
+                </div>
+                <div class="inputfield">
+                    <label for="owner">Owner</label>
+                    <div class = "custom_select">
+                        <select name="owner" id="owner">
+                            <option value="" selected hidden>Owner</option>
+                            <option value="First Owner">First Owner</option>
+                            <option value="Fourth & Above Owner">Fourth & Above Owner</option>
+                            <option value="Second Owner">Second Owner</option>
+                            <option value="Test Drive Car">Test Drive Car</option>
+                            <option value="Third Owner">Third Owner</option>
+                        </select>
+                    </div>
+                </div>
+                
+    
+                <div class="inputfield">
+                    <input class="btn" type="submit" value="Precict Price">
+                </div>
+            </div>
+        </form>
+
+        <div class="result">
+            {% if pred_value != 0 %}
+            <p>Estimated Price : LKR {{pred_value}}</p>
+            {% endif %}
+        </div>
+    </div>
+    
+    <script src="/static/js/script.js"></script>
+</body>
+</html>
